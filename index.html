@@ -546,9 +546,18 @@ html, body {
     .button{
         bottom:10px;
     }
+    .content .name{
+        font-size: 21px;
+    }
+    .content .des{
+        font-size:13px;
+    }
+    .item-content{
+        font-size:13px;
+    }
     .slide .item:nth-child(3), .slide .item:nth-child(4),.slide .item:nth-child(5),.slide .item:nth-child(n+6){
-        height:230px;
-        width:170px;
+        height:200px;
+        width:150px;
     }
     .slide .item:nth-child(4){
         left: calc(52% + 185px);
@@ -608,6 +617,12 @@ html, body {
             document.addEventListener("click", closeMenu);
             document.addEventListener("touchstart", closeMenu);
             window.addEventListener("scroll", closeMenu);
+            function adjustViewportHeight() {
+                const container = document.querySelector('.container');
+                container.style.height = `${window.innerHeight}px`;
+            }
+            adjustViewportHeight();
+            window.addEventListener('resize', adjustViewportHeight);
         </script>
         <div class="slide">
             <div class="item reveal2" style="background-image: url(images/1660px-Gryka_e_Kelcyres_Al_-_panoramio.jpg);">
